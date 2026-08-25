@@ -108,7 +108,7 @@ class SoundTrapMetadataGenerator(SoundTrapMetadataGeneratorAbstract):
                 # if the audio_loc is a s3 url, then we need to list the files in buckets that cover the start and end
                 # dates
                 self.log.debug(
-                    f"Searching between {self.start-timedelta(days=1)} and {end_dt}"
+                    f"Searching between {self.start - timedelta(days=1)} and {end_dt}"
                 )
 
                 client = boto3.client("s3", config=Config(signature_version=UNSIGNED))
@@ -117,7 +117,7 @@ class SoundTrapMetadataGenerator(SoundTrapMetadataGeneratorAbstract):
                 operation_parameters = {"Bucket": bucket}
                 page_iterator = paginator.paginate(**operation_parameters)
                 self.log.info(
-                    f"Searching in bucket: {bucket} for .wav and .xml files between {self.start-timedelta(days=1)} and {end_dt}"
+                    f"Searching in bucket: {bucket} for .wav and .xml files between {self.start - timedelta(days=1)} and {end_dt}"
                 )
 
                 # list the objects in the bucket
@@ -136,7 +136,7 @@ class SoundTrapMetadataGenerator(SoundTrapMetadataGeneratorAbstract):
                             wav_files.append(GenericWavFile(self.log, uri, key_dt))
 
             self.log.info(
-                f"Found {len(wav_files)} files to process that covers the expanded period {self.start-timedelta(days=1)} - {end_dt}"
+                f"Found {len(wav_files)} files to process that covers the expanded period {self.start - timedelta(days=1)} - {end_dt}"
             )
 
             if len(wav_files) == 0:
