@@ -115,7 +115,7 @@ def process_multiple_dates(
     def aggregate(*datasets):  # -> list[xr.Dataset]:
         elapsed_time = time.time() - start_time
         print(
-            f"===> All {len(datasets)} dates completed. Elapsed time: {elapsed_time:.1f} seconds ({elapsed_time/60:.1f} mins)"
+            f"===> All {len(datasets)} dates completed. Elapsed time: {elapsed_time:.1f} seconds ({elapsed_time / 60:.1f} mins)"
         )
         return datasets
 

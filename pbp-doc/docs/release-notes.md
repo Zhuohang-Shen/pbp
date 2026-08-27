@@ -295,9 +295,9 @@ hmb_gen.set_output_dir("/tmp/output")
 errors = hmb_gen.check_parameters()
 if not errors:
     # Process a day
-    result = hmb_gen.process_date('20201008')
+    result = hmb_gen.process_date("20201008")
     # Generate plot
-    hmb_gen.plot_date('20201008')
+    hmb_gen.plot_date("20201008")
 ```
 
 This high-level interface is intended to simplify the usage of the package for common scenarios.

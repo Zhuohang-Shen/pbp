@@ -83,7 +83,7 @@ class JsonGenerator:
 
             # get the file list that covers the requested day
             self.log.debug(
-                f'Found {len(day_df)} files for day {self.day}, between {day_df.iloc[0]["start"]} and {day_df.iloc[-1]["end"]}'
+                f"Found {len(day_df)} files for day {self.day}, between {day_df.iloc[0]['start']} and {day_df.iloc[-1]['end']}"
             )
 
             # if there are no files, then return
@@ -92,10 +92,10 @@ class JsonGenerator:
                 return
 
             for index, row in day_df.iterrows():
-                self.log.debug(f'File {row["uri"]} duration {row["duration_secs"]} ')
+                self.log.debug(f"File {row['uri']} duration {row['duration_secs']} ")
                 if 0 < self.seconds_per_file != row["duration_secs"]:
                     self.log.warning(
-                        f'File {row["duration_secs"]}  != {self.seconds_per_file}. File is not complete'
+                        f"File {row['duration_secs']}  != {self.seconds_per_file}. File is not complete"
                     )
 
             # check whether there is a discrepancy between the number of seconds in the file and the number

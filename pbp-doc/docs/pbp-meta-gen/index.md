@@ -57,17 +57,18 @@ The data must be stored in a public cloud storage bucket; private buckets are no
     An example, if your data is stored locally, for example in `\Users\dcline\Downloads`, and you're processing SoundTrap
     data: 
 ```python
-        import datetime 
-        from pbp.meta_gen.gen_soundtrap import SoundTrapMetadataGenerator
+import datetime
+from pbp.meta_gen.gen_soundtrap import SoundTrapMetadataGenerator
 
-        meta_gen = SoundTrapMetadataGenerator(
-            log='/Users/dcline/Downloads/log', # str pointing to the log file
-            uri='/Users/dcline/Downloads/wav', # str pointing to the sound file location
-            json_base_dir='/Users/dcline/Downloads/metadata', # str pointing to where to store the json metadata files
-            start=datetime.date(2025, 8, 18), # date object
-            end=datetime.date(2025, 9, 18),
-            prefixes=['6610.'], # list of all the prefixes to look for
-            seconds_per_file=500)
+meta_gen = SoundTrapMetadataGenerator(
+    log="/Users/dcline/Downloads/log",  # str pointing to the log file
+    uri="/Users/dcline/Downloads/wav",  # str pointing to the sound file location
+    json_base_dir="/Users/dcline/Downloads/metadata",  # str pointing to where to store the json metadata files
+    start=datetime.date(2025, 8, 18),  # date object
+    end=datetime.date(2025, 9, 18),
+    prefixes=["6610."],  # list of all the prefixes to look for
+    seconds_per_file=500,
+)
 ```
 
 ## Generate JSONs with audio metadata from NRS flac files for a date range

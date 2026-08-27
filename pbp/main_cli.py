@@ -3,6 +3,7 @@ Unified CLI entry point for mbari-pbp.
 
 This provides a single entry point with subcommands for all pbp tools.
 """
+
 import sys
 import argparse
 import multiprocessing
